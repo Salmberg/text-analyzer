@@ -21,5 +21,18 @@ functions:
     events:
       - httpApi:
           path: /word-count
-          method: POST
+          method: GET
+  wordList: 
+    handler: functions/wordList/index.handler
+    events:
+      - httpApi:
+          path: /word-list
+          method: GET
+  summary:
+    handler: functions/summary/index.handler
+    events:
+      - httpApi:
+          path: /summary
+          method: GET
+      
 

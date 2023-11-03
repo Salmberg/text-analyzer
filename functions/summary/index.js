@@ -10,10 +10,11 @@ module.exports.handler = async (event) => {
     }
 
     const text = body.text;
-    const wordCount = text.split(/\s+/).filter((word) => word).length;
+    const words = text.split(/\s+/).filter((word) => word);
+    const wordCount = words.length;
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ wordCount }),
+        body: JSON.stringify({ words, wordCount })
     };
 };
